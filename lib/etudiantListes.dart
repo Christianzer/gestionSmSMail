@@ -19,7 +19,7 @@ class _EtListesState  extends State<ETlistesEt>{
           builder: (context,provider,child){
             if(provider.jsonDartdata == null){
               provider.getData(context);
-              return Center(child: LinearProgressIndicator());
+              return Center(child: CircularProgressIndicator());
             }
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,

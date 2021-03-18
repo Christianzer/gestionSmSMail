@@ -20,7 +20,7 @@ class _reception_spState  extends State<reception_sp>{
           builder: (context,provider,child){
             if(provider.jsonDartdata == null){
               provider.getData(context);
-              return Center(child: LinearProgressIndicator());
+              return Center(child: CircularProgressIndicator());
             }
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,
