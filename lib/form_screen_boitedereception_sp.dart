@@ -13,13 +13,14 @@ class _reception_spState  extends State<reception_sp>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:  AppBar(title: Text("BOITE DE RECEPTION"),),
       body: ChangeNotifierProvider<MyMessageRecuProvider>(
         create : (context) => MyMessageRecuProvider(),
         child: Consumer<MyMessageRecuProvider>(
           builder: (context,provider,child){
             if(provider.jsonDartdata == null){
               provider.getData(context);
-              return Center(child: CircularProgressIndicator());
+              return Center(child: LinearProgressIndicator());
             }
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,

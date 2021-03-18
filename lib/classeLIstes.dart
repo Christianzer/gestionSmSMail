@@ -4,7 +4,10 @@ import 'package:provider/provider.dart';
 
 class ClasseLists extends StatefulWidget{
   @override
-  _ClasseListsState createState()=>_ClasseListsState();
+  State<StatefulWidget> createState() {
+    return _ClasseListsState();
+  }
+
 
 
 }
@@ -13,13 +16,14 @@ class _ClasseListsState  extends State<ClasseLists>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("LISTE DES CLASSES"),),
       body: ChangeNotifierProvider<MyClasseProvider>(
         create : (context) => MyClasseProvider(),
         child: Consumer<MyClasseProvider>(
           builder: (context,provider,child){
             if(provider.jsonDartdata == null){
               provider.getData(context);
-              return Center(child: CircularProgressIndicator());
+              return Center(child: LinearProgressIndicator());
             }
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,

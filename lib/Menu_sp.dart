@@ -8,6 +8,7 @@ import 'package:drawer/envoyer_sp_etudiant.dart';
 import 'package:drawer/listMessageEnvoye.dart';
 import 'package:drawer/liste_classe.dart';
 import 'package:drawer/liste_etudiant.dart';
+import 'package:drawer/main.dart';
 import 'package:flutter/material.dart';
 
 class drawersp extends StatefulWidget {
@@ -33,7 +34,7 @@ class _drawerspState extends State<drawersp> {
                 decoration: BoxDecoration(color: Colors.blueGrey),
                 currentAccountPicture: GestureDetector(
                   child: CircleAvatar(
-                    child: Text('A'),
+                    child: Text('SP'),
                   ),
                 ),
                 accountEmail: Text("${widget.email}"),
@@ -118,6 +119,16 @@ class _drawerspState extends State<drawersp> {
                 selected: true,
                 title: Text('BOITE DE RECEPTION'),
                 leading: Icon(Icons.mail),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => MyHomePage(),
+                  ));
+                },
+                selected: true,
+                title: Text('DECONNEXION'),
+                leading: Icon(Icons.logout),
               ),
 
 

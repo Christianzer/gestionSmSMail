@@ -30,13 +30,10 @@ class _draweretState  extends State<draweret>{
           children: <Widget>[
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(color: Colors.blueGrey),
-              currentAccountPicture: GestureDetector(child: CircleAvatar(child: Text('A'),),),
+              currentAccountPicture: GestureDetector(child: CircleAvatar(child: Text('ET'),),),
               accountEmail: Text("${widget.email}"),
               accountName: Text("${widget.name}"),
             ),
-
-
-
             ListTile(
               onTap: (){
                 // showDialog(context: context,builder: (context) =>AlertDialog(content: Text('vous avez appuiyé menu1'),title: Text('status'),)
@@ -58,6 +55,17 @@ class _draweretState  extends State<draweret>{
               title: Text('ENVOYER MESSAGE AU SP'),
               leading: Icon(Icons.message),
             ),
+            ListTile(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MyHomePage(),
+                ));
+              },
+              selected: true,
+              title: Text('DECONNEXION'),
+              leading: Icon(Icons.logout),
+            ),
+
 
 
             // Here we take the value from the MyHomePage object that was created by

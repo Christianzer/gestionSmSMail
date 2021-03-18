@@ -12,13 +12,14 @@ class _EtListesState  extends State<ETlistesEt>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:  AppBar(title: Text("LISTE DES ETUDIANTS"),),
       body: ChangeNotifierProvider<MyEtudiantProvider>(
         create : (context) => MyEtudiantProvider(),
         child: Consumer<MyEtudiantProvider>(
           builder: (context,provider,child){
             if(provider.jsonDartdata == null){
               provider.getData(context);
-              return Center(child: CircularProgressIndicator());
+              return Center(child: LinearProgressIndicator());
             }
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,

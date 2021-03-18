@@ -13,13 +13,14 @@ class _EtMessageState  extends State<MessaGeEt>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:  AppBar(title: Text("LISTE DES MESSAGES ENVOYES"),),
       body: ChangeNotifierProvider<MyMessageProvider>(
         create : (context) => MyMessageProvider(),
         child: Consumer<MyMessageProvider>(
           builder: (context,provider,child){
             if(provider.jsonDartdata == null){
               provider.getData(context);
-              return Center(child: CircularProgressIndicator());
+              return Center(child: LinearProgressIndicator());
             }
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,
