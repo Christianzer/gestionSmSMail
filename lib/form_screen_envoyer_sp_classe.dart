@@ -24,7 +24,7 @@ class FormScreen7State extends State<FormScreen7> {
   String valueChooseType;
   // ignore: deprecated_member_use
   List testdata = List();
-  final String url = "http://projet_mobile_multimedia.test/api/classe";
+  final String url = "http://192.168.43.133/projet_mobile_multimedia/public/api/classe";
   Future<String> getSWData() async {
     var res = await http.get(url, headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
