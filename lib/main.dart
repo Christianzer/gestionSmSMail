@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     TextEditingController emailController = new TextEditingController();
     TextEditingController mdpController = new TextEditingController();
     Future<List> connect (String login, String mdp) async{
-      var url = 'http://192.168.43.133/projet_mobile_multimedia/public/api/login';
+      var url = 'http://gestion-message.herokuapp.com/api/login';
       //var url = 'http://projet_mobile_multimedia.test/api/login';
       Map<String, String> headers = {'Content-Type':'application/json'};
       String body = '{"email":"$login","pass":"$mdp"}';

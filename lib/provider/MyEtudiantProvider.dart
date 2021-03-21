@@ -7,7 +7,7 @@ class MyEtudiantProvider extends ChangeNotifier{
   EtudiantJson jsonDartdata;
 
   Future getData(context) async{
-    final String url = "http://192.168.43.133/projet_mobile_multimedia/public/api/etudiant";
+    final String url = "http://gestion-message.herokuapp.com/api/etudiant";
     var res = await http.get(url, headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
     this.jsonDartdata = EtudiantJson.fromJson(resBody);

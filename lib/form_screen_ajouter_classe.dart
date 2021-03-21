@@ -50,7 +50,7 @@ class FormScreen2State extends State<FormScreen2> {
   @override
   Widget build(BuildContext context) {
     void saisieClasse(String codecl,String lib) async{
-      var url = 'http://192.168.43.133/projet_mobile_multimedia/public/api/classe';
+      var url = 'http://gestion-message.herokuapp.com/api/classe';
       //var url = 'http://projet_mobile_multimedia.test/api/classe';
       Map<String, String> headers = {'Content-Type':'application/json'};
       String body = '{"code":"$codecl","libelle":"$lib"}';

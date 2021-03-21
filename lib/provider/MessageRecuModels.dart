@@ -10,7 +10,7 @@ class MyMessageRecuProvider extends ChangeNotifier{
   Future getData(context) async{
     final prefs = await SharedPreferences.getInstance();
     final matricule = prefs.getString('matricule');
-    final String url = "http://192.168.43.133/projet_mobile_multimedia/public/api/messageSp/$matricule";
+    final String url = "http://gestion-message.herokuapp.com/api/messageSp/$matricule";
     var res = await http.get(url, headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
     this.jsonDartdata =  MessageRecuJson.fromJson(resBody);

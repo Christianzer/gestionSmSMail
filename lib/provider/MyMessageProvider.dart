@@ -8,7 +8,7 @@ class MyMessageProvider extends ChangeNotifier{
 
   Future getData(context) async{
 
-    final String url = "http://192.168.43.133/projet_mobile_multimedia/public/api/message";
+    final String url = "http://gestion-message.herokuapp.com/api/message";
     var res = await http.get(url, headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
     this.jsonDartdata = MessageJson.fromJson(resBody);
